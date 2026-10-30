@@ -9,3 +9,4 @@ RUN mkdir -p storage/framework/{cache,sessions,views} storage/logs bootstrap/cac
  && composer install --no-dev --optimize-autoloader --no-interaction \
  && npm install && npm run build && rm -rf node_modules
 CMD sh -c "touch database/database.sqlite && php artisan migrate:fresh --seed --force && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"
+RUN printf "display_errors=On\nlog_errors=On\nerror_log=/dev/stderr\n" > /usr/local/etc/php/conf.d/zz-debug.ini
