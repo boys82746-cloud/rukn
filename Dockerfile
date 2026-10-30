@@ -1,4 +1,4 @@
-﻿FROM php:8.3-cli
+﻿FROM php:8.5-cli
 RUN apt-get update && apt-get install -y git unzip curl \
  && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
  && apt-get install -y nodejs && rm -rf /var/lib/apt/lists/*
