@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+
+@source '../../storage/framework/views/*.php';
+
+/* ---------- Brand identity: "Rukn" — deep emerald + warm gold on cream ---------- */
+@theme {
+    --font-sans: 'Tajawal', ui-sans-serif, system-ui, sans-serif;
+
+    --color-brand: #0f5c4d;
+    --color-brand-dark: #0a4036;
+    --color-brand-light: #e6f2ee;
+    --color-gold: #c9973a;
+    --color-gold-dark: #b0832e;
+    --color-gold-light: #f6ecd6;
+    --color-ink: #1b2a26;
+    --color-muted: #66736f;
+    --color-line: #e5e1d8;
+    --color-cream: #faf7f2;
+}
+
+@layer base {
+    body {
+        @apply bg-cream font-sans text-ink antialiased;
+    }
+}
+
+@layer components {
+    /* Buttons: always combine .btn with one variant, e.g. class="btn btn-primary" */
+    .btn {
+        @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-base font-bold transition focus:outline-none focus-visible:ring-4;
+    }
+    .btn-primary {
+        @apply bg-brand text-white shadow-sm hover:bg-brand-dark focus-visible:ring-brand/30;
+    }
+    .btn-gold {
+        @apply bg-gold text-ink shadow-sm hover:bg-gold-dark focus-visible:ring-gold/30;
+    }
+    .btn-ghost {
+        @apply border border-line bg-white text-ink hover:bg-cream focus-visible:ring-brand/20;
+    }
+    .btn-danger {
+        @apply border border-red-200 bg-red-50 text-red-700 hover:bg-red-100 focus-visible:ring-red-200;
+    }
+
+    .label {
+        @apply mb-1.5 block text-sm font-bold text-ink;
+    }
+    .input {
+        @apply w-full rounded-xl border border-line bg-white px-4 py-2.5 text-ink placeholder:text-muted/60 focus:border-brand focus:outline-none focus:ring-4 focus:ring-brand/15;
+    }
+
+    .card {
+        @apply rounded-2xl border border-line bg-white shadow-sm;
+    }
+
+    .chip {
+        @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1.5 text-sm font-medium text-ink transition hover:border-brand hover:text-brand;
+    }
+    .chip-active {
+        @apply border-brand bg-brand text-white hover:text-white;
+    }
+}
+
+.hero-bg {
+    background: linear-gradient(135deg, #0a4036 0%, #0f5c4d 55%, #167a65 100%);
+}
