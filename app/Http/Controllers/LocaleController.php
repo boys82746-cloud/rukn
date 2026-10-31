@@ -8,7 +8,7 @@ class LocaleController extends Controller
 {
     public function __invoke(Request $request, string $locale)
     {
-        abort_unless(in_array($locale, config('marketplace.locales'), true), 404);
+        abort_unless(in_array($locale, config('rukn.locales'), true), 404);
 
         $request->session()->put('locale', $locale);
 

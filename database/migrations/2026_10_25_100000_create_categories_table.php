@@ -19,10 +19,10 @@ return new class extends Migration
         // Categories are reference data: the app cannot work without them,
         // so they are created together with the table (no seeding needed).
         $categories = [
-            'vehicles' => '🚗', 'real_estate' => '🏠', 'electronics' => '📱',
-            'furniture' => '🛋️', 'fashion' => '👗', 'services' => '🛠️',
-            'jobs' => '💼', 'kids' => '🧸', 'sports' => '⚽',
-            'books' => '📚', 'other' => '📦',
+            'wisdom' => '💡', 'motivation' => '🔥', 'faith' => '🕌',
+            'love' => '❤️', 'success' => '🏆', 'life' => '🌿',
+            'friendship' => '🤝', 'knowledge' => '📚', 'patience' => '⏳',
+            'humor' => '😄', 'other' => '✨',
         ];
 
         $sort = 0;

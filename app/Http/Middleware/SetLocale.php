@@ -12,7 +12,7 @@ class SetLocale
 {
     public function handle(Request $request, Closure $next): Response
     {
-        $locales = config('marketplace.locales');
+        $locales = config('rukn.locales');
         $locale = $request->session()->get('locale', $locales[0]);
 
         if (! in_array($locale, $locales, true)) {

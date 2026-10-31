@@ -7,14 +7,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Fillable(['title', 'description', 'price', 'category_id', 'city'])]
-class Listing extends Model
+#[Fillable(['text', 'category_id'])]
+class Quote extends Model
 {
-    protected function casts(): array
-    {
-        return ['price' => 'integer'];
-    }
-
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
@@ -25,7 +20,7 @@ class Listing extends Model
         return $this->belongsTo(Category::class);
     }
 
-    /** Free-text search in title and description. */
+    /** Free-text search in the quote itself or in the publisher's name. */
     public function scopeSearch(Builder $query, string $term): Builder
     {
         if ($term === '') {
@@ -35,16 +30,12 @@ class Listing extends Model
         $like = '%'.$term.'%';
 
         return $query->where(fn (Builder $q) => $q
-            ->where('title', 'like', $like)
-            ->orWhere('description', 'like', $like));
+            ->where('text', 'like', $like)
+            ->orWhereHas('user', fn (Builder $u) => $u->where('name', 'like', $like)));
     }
 
     public function scopeOrdered(Builder $query, string $sort): Builder
     {
-        return match ($sort) {
-            'price_asc' => $query->orderBy('price')->latest(),
-            'price_desc' => $query->orderByDesc('price')->latest(),
-            default => $query->latest(),
-        };
+        return $sort === 'oldest' ? $query->oldest() : $query->latest();
     }
 }

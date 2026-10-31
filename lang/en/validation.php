@@ -21,10 +21,7 @@ return [
         'name' => 'name',
         'email' => 'email',
         'password' => 'password',
-        'title' => 'title',
-        'description' => 'description',
-        'price' => 'price',
+        'text' => 'quote',
         'category_id' => 'category',
-        'city' => 'city',
     ],
 ];

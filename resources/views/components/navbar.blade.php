@@ -14,8 +14,8 @@
                 {{ __('ui.nav.lang') }}
             </a>
 
-            <a href="{{ route('listings.create') }}" class="btn btn-gold px-4 py-2 text-sm">
-                + {{ __('ui.nav.post_ad') }}
+            <a href="{{ route('quotes.create') }}" class="btn btn-gold px-4 py-2 text-sm">
+                + {{ __('ui.nav.share') }}
             </a>
 
             @auth

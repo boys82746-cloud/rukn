@@ -9,8 +9,8 @@ class Category extends Model
 {
     public $timestamps = false;
 
-    public function listings(): HasMany
+    public function quotes(): HasMany
     {
-        return $this->hasMany(Listing::class);
+        return $this->hasMany(Quote::class);
     }
 }

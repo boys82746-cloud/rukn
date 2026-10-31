@@ -1,15 +1,15 @@
 <?php
 
 return [
-    'vehicles' => 'Vehicles',
-    'real_estate' => 'Real estate',
-    'electronics' => 'Electronics',
-    'furniture' => 'Furniture & home',
-    'fashion' => 'Fashion',
-    'services' => 'Services',
-    'jobs' => 'Jobs',
-    'kids' => 'Kids',
-    'sports' => 'Sports',
-    'books' => 'Books',
+    'wisdom' => 'Wisdom',
+    'motivation' => 'Motivation',
+    'faith' => 'Faith',
+    'love' => 'Love',
+    'success' => 'Success',
+    'life' => 'Life',
+    'friendship' => 'Friendship',
+    'knowledge' => 'Knowledge',
+    'patience' => 'Patience',
+    'humor' => 'Humor',
     'other' => 'Other',
 ];
